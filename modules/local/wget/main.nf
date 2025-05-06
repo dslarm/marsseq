@@ -2,10 +2,10 @@ process WGET {
     tag "$filename"
     label "process_low"
 
-    conda "bioconda::gnu-wget=1.18"
+    conda "conda-forge::wget=1.21.4"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/gnu-wget:1.18--h5bf99c6_5' :
-        'biocontainers/gnu-wget:1.18--h5bf99c6_5' }"
+        'https://depot.galaxyproject.org/singularity/wget:1.21.4--hda4d442_0' :
+        'biocontainers/wget:1.21.4--hda4d442_0' }"
 
     input:
     val url
